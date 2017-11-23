@@ -26,7 +26,6 @@ oneQuestionAnswers: function (req, res) {
 },
 
 updateAnswer: function(req, res) {
-    console.log("update Answer", req.body);
     Answer.update({_id: req.params.id}, req.body, function (err, data) {
         if (err) {
             res.json(err);

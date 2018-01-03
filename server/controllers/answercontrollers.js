@@ -15,25 +15,22 @@ createAnswer: function (req, res) {
         
 },
 oneQuestionAnswers: function (req, res) {
-    console.log("got to itsanswers");
-    Answer.find({_questionID: req.params.id}, function (err, data) {
+    Answer.find({_questionID: req.params.id}, function (err, answer) {
         if (err) {
-            console.log("could not retrive data");
             res.json(err);
             return;
         }
-        res.json(data);
+        res.json(answer);
     });
 },
 
 updateAnswer: function(req, res) {
-    console.log("update Answer", req.body);
-    Answer.update({_id: req.params.id}, req.body, function (err, data) {
+    Answer.update({_id: req.params.id}, req.body, function (err, answer) {
         if (err) {
             res.json(err);
             return;
         }
-        res.json(data);
+        res.json(answer);
     });
 },
 

@@ -10,9 +10,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+
 <a [routerLink] = "['/dashboard']">Home</a>
 <a  (click)="answerThisQuestion()" >Answer this Question</a>
 <a><span (click) = "logout()"><button type="button" class="logout">Logout</button></span></a>
+<div class="wrapper">
 <h1>{{ question.question }}</h1>
 <p>{{ question.description }}</p>
 <table>
@@ -22,9 +24,10 @@
         <b>{{answer.answer}}</b><br>
         {{answer.details}}
       </td>
-      <td>{{answer.likes}} likes</td>
-      <td><button (click)='like(answer._id, answer)'>Like!</button></td>
+      <td >{{answer.likes}} likes</td>
+      <td><button class="like" (click)='like(answer._id, answer)'>Like!</button></td>
     </tr>
 </table>
+</div>
 </body>
 </html>

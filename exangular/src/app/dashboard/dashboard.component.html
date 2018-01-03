@@ -9,11 +9,11 @@
   </head>
 
   <body>
-    <div class="dashboard">
+    <div class="wrapper">
         <div class="topcontainer">
           <div class="header">
               <h2>Hi {{ name }}!</h2>
-              <a [routerLink] = "['/newquestion']">Add a Question</a><a><span (click) = "logout()"><button type="button" class="logout">Logout</button></span></a>
+              <a [routerLink] = "['/newquestion']">Add a Question</a><a><span (click) = "logout()"><button type="button" class="like" class="logout">Logout</button></span></a>
           </div>
           <input [(ngModel)]="searchText" placeholder="search for questions">
         </div>
@@ -28,7 +28,7 @@
               <tr *ngFor = "let question of questions | filter: searchText">
                   <td>{{question.question}}</td>
                   <td>{{question._answers.length}}</td>
-                  <td><p><button type="button" name="button" (click) = "show(question._id)">show</button><button type="button" name="button" (click) = "answer(question._id)">Answer</button></p></td>          
+                  <td><p><button class="like" type="button" name="button" (click) = "show(question._id)">show</button><button class="like" type="button" name="button" (click) = "answer(question._id)">Answer</button></p></td>          
               </tr>
           </table>
     </div>

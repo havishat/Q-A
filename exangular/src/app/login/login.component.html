@@ -3,19 +3,25 @@
 <head>
   <title>Login</title>
 </head>
-<body> 
-    <h1>Login</h1>
-    <form (submit)="onSubmit()" #formData='ngForm'>
-        Your Name: <input name='name'
-        class='long'
-        type="text"
-        required
-        minlength="3"
-        [(ngModel)]="loginobject.name"
-        />
-        <br>
-        <input class='green' [disabled]='formData.invalid' type="submit" value="Login">
-    </form> 
+<body>
+    <div class="log-reg">
+    <img src="../../../assets/images.jpg" alt="Mountain View" width="500" height="377"><br>
+    <h1>Login Page</h1>
+    <fieldset class="wrapper" class="inline"> 
+        <form (submit)="onSubmit()" #formData='ngForm'>
+            Enter Your Name: <br> <input name='name'
+            class='long'
+            type="text"
+            required
+            minlength="3"
+            [(ngModel)]="loginobject.name"
+            />
+            <br>
+            <br>
+            <input class='button' [disabled]='formData.invalid' type="submit" value="Login">
+        </form> 
+    </fieldset>
+    </div>
     
 </body>
 </html> 

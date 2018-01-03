@@ -20,7 +20,7 @@
       {{question.question}}
     </h1>
     <p>{{question.description}}</p>
-    <div class="tbl-header">
+    <div class="wrapper">
         <form (submit)="createAnswer()" #formData='ngForm'>
         Your Answer: <input name='your answer' type="text" required minlength="5"  [(ngModel)] = "newanswer.answer" #answer='ngModel'/> <br>
         <span *ngIf=(answer.errors) [ngStyle]="{'color': 'red'}"> Give me valid answer!</span>

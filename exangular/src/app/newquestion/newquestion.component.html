@@ -17,7 +17,7 @@
     <h1>
       New Question:
     </h1>
-    <div class="tbl-header">
+    <div class="wrapper">
         <form (submit)="createQuestion()" #formData='ngForm'>
         Question: <input name='question' type="text" required minlength="10"  [(ngModel)] = "newquestion.question" #question='ngModel'/> <br>
         <span *ngIf=(question.errors) [ngStyle]="{'color': 'red'}"> Give me valid question!</span>
